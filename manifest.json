@@ -1,12 +1,13 @@
 {
-  "name": "ApplyAway",
-  "description": "Log your Job Apps!",
+  "name": "ApplyAway2",
+  "description": "Log your HTML",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
   "service_worker": "background.js"
   },
   "permissions": ["storage", "activeTab", "scripting", "tabs"],
+  "host_permissions": ["*://*/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
