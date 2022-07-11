@@ -32,3 +32,29 @@ chrome.runtime.sendMessage({
     action: "getSource",
     source: DOMtoString(document)
 });
+
+////////////////////////////////////////////////////////////
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//   // 2. A page requested user data, respond with a copy of `user`
+//   if (message === 'get-user-data') {
+//     sendResponse(DOMtoString(document));
+//     return true;
+//   }
+// });
+////////////////////////////////////////////////////////////
+// chrome.runtime.sendMessage({greeting: "hello"}, function() {
+//   console.log("hello there");
+// });
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+//   // 2. A page requested user data, respond with a copy of `user`
+//   console.log("testing 2");
+//   if (message === 'get-user-data') {
+//     console.log("respeonse sent");
+//     sendResponse(DOMtoString(document));
+//     // return true;
+//   }
+// });
+////////////////////////////////////////////////////////////
+
+
+// I need to execute the function in this file.
