@@ -4,6 +4,7 @@
 
 let changeColor = document.getElementById("changeColor");
 
+let username = "test33"
 let valueURL = document.getElementById("url");
 let submitButton = document.getElementById("submitURL");
 let url;
@@ -142,7 +143,7 @@ function myAlert(){
     // y = x.substr(1,10);
     y = x.substr(1,10);
     data = x;
-    data = url + "\n" + x;
+    data = username + "\n" + url + "\n" + x;
 
     // xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Content-Type", "text/html");
