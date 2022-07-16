@@ -35,7 +35,7 @@ chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     url = tabs[0].url;
     if(url.substr(0,25)!="https://www.linkedin.com/"){
       document.getElementById('url').value = "Site not currently supported!";
-      note.value = "Coming soon!"
+      notes.value = "Coming soon!"
     }
     else{
       document.getElementById('url').value = url;
