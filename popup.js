@@ -4,10 +4,12 @@
 
 let changeColor = document.getElementById("changeColor");
 
-let username = "test33"
-let valueURL = document.getElementById("url");
+let username = "caduma";
 let submitButton = document.getElementById("submitURL");
 let url;
+let notes;
+notes = document.getElementById("notes");
+// notes = notes.replace(/(\r\n|\n|\r)/gm, " ");
 let id;
 let data;
 let x;
@@ -31,7 +33,13 @@ const getSizeInBytes = obj => {
 
 chrome.tabs.query({active: true, lastFocusedWindow: true}, tabs => {
     url = tabs[0].url;
-    document.getElementById('url').value = url;
+    if(url.substr(0,25)!="https://www.linkedin.com/"){
+      document.getElementById('url').value = "Site not currently supported!";
+      note.value = "Coming soon!"
+    }
+    else{
+      document.getElementById('url').value = url;
+    }
 });
 
 // // let html;
@@ -58,7 +66,8 @@ const tabID = getTabId();
 function myAlert(){
   const tabID = getTabId();
   let xhr = new XMLHttpRequest();
-  xhr.open("POST", "https://apply-away2.herokuapp.com/movies");
+  // xhr.open("POST", "https://apply-away2.herokuapp.com/movies");
+  xhr.open("POST", "https://applyawaylaunch.herokuapp.com/");
 
   // const tabID = getTabId();
 
@@ -137,13 +146,13 @@ function myAlert(){
 
   chrome.runtime.onMessage.addListener(async function(request, sender) {
   if (request.action == "getSource") {
-    message.innerText = request.source;
+    message.innerText = request.source; ////////////////////////////////////
     html = request.source
     x = message.innerText;
     // y = x.substr(1,10);
     y = x.substr(1,10);
     data = x;
-    data = username + "\n" + url + "\n" + x;
+    data = username + "\n" + url + "\n" + notes.value + "\n" + x;
 
     // xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Content-Type", "text/html");
