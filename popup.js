@@ -4,7 +4,7 @@
 
 let changeColor = document.getElementById("changeColor");
 
-let username = "caduma";
+let username = "test33";
 let submitButton = document.getElementById("submitURL");
 let url;
 let notes;
@@ -67,7 +67,7 @@ function myAlert(){
   const tabID = getTabId();
   let xhr = new XMLHttpRequest();
   // xhr.open("POST", "https://apply-away2.herokuapp.com/movies");
-  xhr.open("POST", "https://applyawaylaunch.herokuapp.com/");
+  xhr.open("POST", "http://127.0.0.1:8000/webEx");
 
   // const tabID = getTabId();
 
@@ -149,10 +149,9 @@ function myAlert(){
     message.innerText = request.source; ////////////////////////////////////
     html = request.source
     x = message.innerText;
-    // y = x.substr(1,10);
-    y = x.substr(1,10);
-    data = x;
-    data = username + "\n" + url + "\n" + notes.value + "\n" + x;
+
+    data = "This is a test" + "\n" + x;
+    // data = username + "\n" + url + "\n" + notes.value + "\n" + x;
 
     // xhr.setRequestHeader("Content-Type", "application/json");
     xhr.setRequestHeader("Content-Type", "text/html");
